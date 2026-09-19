@@ -1,0 +1,24 @@
+//===== SeROja Script ==========================================
+//= GM Client-Flag Bridge
+//===== Description: =========================================
+//= Tells the client whether the connecting account is GM, so the
+//= robrowser auto-attack / auto-skill toggle buttons can gate
+//= themselves — there is no stock login/char packet field that
+//= carries group_id to the client (roBrowserLegacy's `userLevel`
+//= is rAthena's login_id1 auth token, not a permission level; do
+//= not reuse it for this).
+//=
+//= One dispbottom per login, reusing the SEROJA<TAB> bridge
+//= protocol serojaBridge.js already consumes off ZC_NPC_CHAT
+//= (see UI/Components/SeROjaCommon/serojaBridge.js) — nonce 0
+//= marks an unsolicited push rather than a reply to a request.
+//===============================================================
+
+-	script	seroja_gm_flag	-1,{
+	end;
+
+OnPCLoginEvent:
+	if (getgroupid() > 0)
+		dispbottom "SEROJA\t0\tGM\t1";
+	end;
+}
