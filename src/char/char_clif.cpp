@@ -701,26 +701,7 @@ bool chclif_parse_char_delete2_accept( int32 fd, char_session_data& sd ){
 
 	ShowInfo( CL_RED "Request Char Deletion: " CL_GREEN "%d (%d)" CL_RESET "\n", sd.account_id, char_id );
 
-	// construct "YY-MM-DD"
-	char birthdate[8 + 1];
-
-	birthdate[0] = p->birthdate[0];
-	birthdate[1] = p->birthdate[1];
-	birthdate[2] = '-';
-	birthdate[3] = p->birthdate[2];
-	birthdate[4] = p->birthdate[3];
-	birthdate[5] = '-';
-	birthdate[6] = p->birthdate[4];
-	birthdate[7] = p->birthdate[5];
-	birthdate[8] = '\0';
-
-	// Only check for birthdate
-	if( !chclif_delchar_check( &sd, birthdate, CHAR_DEL_BIRTHDATE ) ){
-		chclif_char_delete2_accept_ack( fd, char_id, 5 );
-
-		return true;
-	}
-
+	// No server-side delete-key check: the client's Yes/No prompt is the only confirmation gate.
 	switch( char_delete( &sd, char_id ) ){
 		// success
 		case CHAR_DELETE_OK:
