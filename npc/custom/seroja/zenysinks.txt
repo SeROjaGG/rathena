@@ -88,19 +88,15 @@ prontera,148,187,4	script	Ore Trader#seroja	4_M_ALCHE_B,{
 	mes "[Ore Trader]";
 	mes "Refined ore for sale, and I'll upgrade the rough stuff.";
 	next;
-	.@c = select(
-		"Buy Oridecon — 30,000z",
-		"Buy Elunium — 30,000z",
-		"Refine: 5 Oridecon -> 1 Enriched Oridecon",
-		"Refine: 5 Elunium -> 1 Enriched Elunium",
-		"Refine: 3 Oridecon -> 1 HD Oridecon",
-		"Refine: 3 Elunium -> 1 HD Elunium",
-		"Leave");
-	if (.@c == 7)
+	.@c = select("Buy Ore", "Refine Ore", "Leave");
+	if (.@c == 3)
 		close;
 
-	if (.@c <= 2) {
-		.@id = (.@c == 1) ? 984 : 985;
+	if (.@c == 1) {
+		.@b = select("Oridecon — 30,000z", "Elunium — 30,000z", "Leave");
+		if (.@b == 3)
+			close;
+		.@id = (.@b == 1) ? 984 : 985;
 		if (Zeny < 30000) {
 			mes "[Ore Trader]";
 			mes "That's 30,000z a piece.";
@@ -118,10 +114,19 @@ prontera,148,187,4	script	Ore Trader#seroja	4_M_ALCHE_B,{
 		close;
 	}
 
-	if (.@c == 3) { .@fid = 984; .@fq = 5; .@tid = 7620; }
-	if (.@c == 4) { .@fid = 985; .@fq = 5; .@tid = 7619; }
-	if (.@c == 5) { .@fid = 984; .@fq = 3; .@tid = 6240; }
-	if (.@c == 6) { .@fid = 985; .@fq = 3; .@tid = 6241; }
+	.@r = select(
+		"5 Oridecon -> 1 Enriched Oridecon",
+		"5 Elunium -> 1 Enriched Elunium",
+		"3 Oridecon -> 1 HD Oridecon",
+		"3 Elunium -> 1 HD Elunium",
+		"Leave");
+	if (.@r == 5)
+		close;
+
+	if (.@r == 1) { .@fid = 984; .@fq = 5; .@tid = 7620; }
+	if (.@r == 2) { .@fid = 985; .@fq = 5; .@tid = 7619; }
+	if (.@r == 3) { .@fid = 984; .@fq = 3; .@tid = 6240; }
+	if (.@r == 4) { .@fid = 985; .@fq = 3; .@tid = 6241; }
 	if (countitem(.@fid) < .@fq) {
 		mes "[Ore Trader]";
 		mes "Bring me " + .@fq + "x " + getitemname(.@fid) + " and I'll do it.";
