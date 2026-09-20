@@ -10778,6 +10778,18 @@ void clif_parse_LoadEndAck(int32 fd,map_session_data *sd)
 #else
 	clif_changelook(sd,LOOK_WEAPON,0);
 #endif
+	// pc_set_costume_view() only resends a LOOK_HEAD_* packet when its computed
+	// value differs from sd->status.head_bottom/mid/top/robe's CURRENT value --
+	// correct for live re-equips mid-session (avoids redundant packets), but
+	// wrong here: this is the client's first-ever view of itself after
+	// connecting, so it always needs the full costume state regardless of
+	// whether the server-side value "changed". If those already happen to
+	// match what's about to be recomputed (e.g. a fast reconnect that never
+	// fully tore down the previous session), the resend gets skipped and a
+	// Head_Low/Mid/Top costume silently never renders for the client despite
+	// being equipped -- reported as "costume sprite not showing on character".
+	// Force a resync by invalidating the "before" snapshot the diff reads.
+	sd->status.head_bottom = sd->status.head_mid = sd->status.head_top = sd->status.robe = -1;
 	pc_set_costume_view(sd);
 
 	clif_refresh_clothcolor( *sd, SELF );
