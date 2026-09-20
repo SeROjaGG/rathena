@@ -68,6 +68,14 @@ max_trait_parameter: 150
 // refinemain, which the client handles. Same rationale as feature.roulette.
 feature.refineui: off
 
+// Merchant cart: "can't put items in cart" / "remove from cart error" reports.
+// max_cart_weight (stock 8000) is a flat cap that doesn't scale with STR/level
+// like inventory max_weight does (job_db maxWeight + STR*300) -- on a 255-STR,
+// Lv275 server the cart is the tightest limit by far, hit long before
+// inventory ever would. Raised to this config key's own upper bound (see
+// battle.cpp battle_config_adjust: {"max_cart_weight", ..., 100, 1000000}).
+max_cart_weight: 1000000
+
 // #15 Fast casting under RENEWAL_CAST (this fork compiles it in).
 //  - vcast_stat_scale: the (DEX*2 + INT) total at which variable cast hits
 //    zero. Stock 530. Set to 300 so ~150 total DEX alone (150*2) = instant
