@@ -2,8 +2,8 @@ login_ip: login
 char_ip: 127.0.0.1
 pincode_enabled: no
 
-// Character deletion cooldown: 30 minutes instead of the 24h stock default.
-char_del_delay: 1800
+// Character deletion cooldown: 10 minutes instead of the 24h stock default.
+char_del_delay: 600
 
 // ---- SeROja identity + new-player start (PLAN-015 / Phase 2a) ----
 server_name: SeROja
