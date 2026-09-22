@@ -12638,6 +12638,13 @@ void clif_parse_GetItemFromCart(int32 fd,map_session_data *sd)
 /// 012a
 void clif_parse_RemoveOption(int32 fd,map_session_data *sd)
 {
+	// SeROja: the Rental Master's "any class" mount (npc/custom/seroja/hub_services.txt)
+	// grants SC_ALL_RIDING, a status change rather than one of the OPTION_* bits below --
+	// give it priority same as the option-based mounts do.
+	if( sd->sc.getSCE(SC_ALL_RIDING) ) {
+		status_change_end(sd, SC_ALL_RIDING);
+		return;
+	}
 	if( !(sd->sc.option&(OPTION_RIDING|OPTION_FALCON|OPTION_DRAGON|OPTION_WUGRIDER|OPTION_MADOGEAR))
 #ifdef NEW_CARTS
 		&& sd->sc.getSCE(SC_PUSH_CART) )
