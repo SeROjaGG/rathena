@@ -1,0 +1,21 @@
+//===== rAthena Script =======================================
+//= Issgard Field Monsters Spawn Script
+//===== Description: =========================================
+//= Spawns monsters in the Frozen Scale fields (jor_back1-3).
+//============================================================
+
+jor_back1	monster	Ice Gangu	EP19_ICE_GANGU,60
+jor_back1	monster	Shining Seaweed	EP19_SHINING_SEAWEED,60
+jor_back1	monster	Ice Straw	EP19_ICE_STRAW,80
+
+jor_back2	monster	Ice Gangu	EP19_ICE_GANGU,25
+jor_back2	monster	Ice Straw	EP19_ICE_STRAW,35
+jor_back2	monster	Unfrost Flower	EP19_UNFROST_FLOWER,70
+jor_back2	monster	Limacina	EP19_LIMACINA,70
+
+jor_back3	monster	Ice Gangu	EP19_ICE_GANGU,20
+jor_back3	monster	Calmaring	EP19_CALMARING,70
+jor_back3	monster	Primitive Rgan	EP19_RGAN_A,30
+jor_back3	monster	Lowest Rgan	EP19_RGAN_B,15
+jor_back3	monster	Limacina	EP19_LIMACINA,70
+jor_back3	boss_monster	Ultra Limacina	EP19_LIMACINA_BOSS,1,21600000,600000,0
