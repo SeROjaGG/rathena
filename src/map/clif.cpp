@@ -12638,7 +12638,7 @@ void clif_parse_GetItemFromCart(int32 fd,map_session_data *sd)
 /// 012a
 void clif_parse_RemoveOption(int32 fd,map_session_data *sd)
 {
-	if( !(sd->sc.option&(OPTION_RIDING|OPTION_FALCON|OPTION_DRAGON|OPTION_MADOGEAR))
+	if( !(sd->sc.option&(OPTION_RIDING|OPTION_FALCON|OPTION_DRAGON|OPTION_WUGRIDER|OPTION_MADOGEAR))
 #ifdef NEW_CARTS
 		&& sd->sc.getSCE(SC_PUSH_CART) )
 		pc_setcart(sd,0);
@@ -12647,7 +12647,7 @@ void clif_parse_RemoveOption(int32 fd,map_session_data *sd)
 		pc_setoption(sd,sd->sc.option&~OPTION_CART);
 #endif
 	else  // priority to remove this option before we can clear cart
-		pc_setoption(sd,sd->sc.option&~(OPTION_RIDING|OPTION_FALCON|OPTION_DRAGON|OPTION_MADOGEAR));
+		pc_setoption(sd,sd->sc.option&~(OPTION_RIDING|OPTION_FALCON|OPTION_DRAGON|OPTION_WUGRIDER|OPTION_MADOGEAR));
 }
 
 
