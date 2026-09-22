@@ -1,0 +1,13 @@
+//===== rAthena Script =======================================
+//= Clock Tower: Unknown Basement Monsters Spawn Script
+//===== Description: =========================================
+//= Spawns monsters in clock_01 (entered via the "Giant Spring"
+//= NPC in Clock Tower 1F, npc/re/warps/dungeons/clock_01.txt).
+//============================================================
+
+clock_01	monster	Extra Joker	EXTRA_JOKER,15
+clock_01	monster	Erzsebet	ERZSEBET,15
+clock_01	monster	Jennifer	JENIFFER,15
+clock_01	monster	General Orc	GENERAL_ORC,15
+clock_01	monster	Sieglouse	SIEGLOUSE,15
+clock_01	boss_monster	Goblin King	GOBLIN_KING,1,21600000,600000,0

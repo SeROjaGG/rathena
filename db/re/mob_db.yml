@@ -99843,8 +99843,40 @@ Body:
 #    AegisName: MD_TRE_WHISPER
 #  - Id: 20117
 #    AegisName: MD_TRE_HYDRA
-#  - Id: 20118
-#    AegisName: GOBLIN_KING
+  - Id: 20118
+    AegisName: GOBLIN_KING
+    Name: Goblin King
+    Level: 255
+    Hp: 343542229
+    BaseExp: 17177111
+    JobExp: 11451407
+    Attack: 9068
+    Attack2: 4321
+    Defense: 670
+    MagicDefense: 104
+    Str: 170
+    Agi: 201
+    Vit: 84
+    Int: 160
+    Dex: 170
+    Luk: 70
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Wind
+    ElementLevel: 3
+    WalkSpeed: 150
+    AttackDelay: 517
+    AttackMotion: 1134
+    ClientAttackMotion: 864
+    DamageMotion: 480
+    DamageTaken: 10
+    Ai: 21
+    Class: Boss
+    Modes:
+      Mvp: true
 #  - Id: 20119
 #    AegisName: BAD_CATCUMBER
 #  - Id: 20120
@@ -99957,16 +99989,156 @@ Body:
 #    AegisName: RAYDRIC_ARCHER_MJ
 #  - Id: 20174
 #    AegisName: RAGGED_ZOMBIE_MJ
-#  - Id: 20175
-#    AegisName: EXTRA_JOKER
-#  - Id: 20176
-#    AegisName: ERZSEBET
-#  - Id: 20177
-#    AegisName: JENIFFER
-#  - Id: 20178
-#    AegisName: GENERAL_ORC
-#  - Id: 20179
-#    AegisName: SIEGLOUSE
+  - Id: 20175
+    AegisName: EXTRA_JOKER
+    Name: Extra Joker
+    Level: 255
+    Hp: 9831627
+    BaseExp: 755552
+    JobExp: 527566
+    Attack: 12380
+    Attack2: 5955
+    Defense: 288
+    MagicDefense: 158
+    Str: 217
+    Agi: 255
+    Vit: 142
+    Int: 182
+    Dex: 233
+    Luk: 223
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Demon
+    Element: Wind
+    ElementLevel: 4
+    WalkSpeed: 150
+    AttackDelay: 238
+    AttackMotion: 576
+    ClientAttackMotion: 384
+    DamageMotion: 360
+    Ai: 04
+  - Id: 20176
+    AegisName: ERZSEBET
+    Name: Erzsebet
+    Level: 254
+    Hp: 9427395
+    BaseExp: 748788
+    JobExp: 523891
+    Attack: 9244
+    Attack2: 4429
+    Defense: 277
+    MagicDefense: 291
+    Str: 131
+    Agi: 141
+    Vit: 147
+    Int: 199
+    Dex: 177
+    Luk: 199
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Dark
+    ElementLevel: 1
+    WalkSpeed: 150
+    AttackDelay: 238
+    AttackMotion: 576
+    ClientAttackMotion: 384
+    DamageMotion: 360
+    Ai: 04
+  - Id: 20177
+    AegisName: JENIFFER
+    Name: Jennifer
+    Level: 255
+    Hp: 10244617
+    BaseExp: 1057772
+    JobExp: 738592
+    Attack: 11150
+    Attack2: 5373
+    Defense: 264
+    MagicDefense: 140
+    Str: 150
+    Agi: 176
+    Vit: 98
+    Int: 126
+    Dex: 207
+    Luk: 154
+    AttackRange: 7
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Fish
+    Element: Dark
+    ElementLevel: 1
+    WalkSpeed: 150
+    AttackDelay: 238
+    AttackMotion: 576
+    ClientAttackMotion: 384
+    DamageMotion: 360
+    Ai: 04
+  - Id: 20178
+    AegisName: GENERAL_ORC
+    Name: General Orc
+    Level: 255
+    Hp: 12201347
+    BaseExp: 767150
+    JobExp: 533799
+    Attack: 9908
+    Attack2: 4757
+    Defense: 528
+    MagicDefense: 231
+    Str: 140
+    Agi: 136
+    Vit: 191
+    Int: 165
+    Dex: 170
+    Luk: 157
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Demihuman
+    Element: Dark
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 238
+    AttackMotion: 576
+    ClientAttackMotion: 384
+    DamageMotion: 360
+    Ai: 04
+  - Id: 20179
+    AegisName: SIEGLOUSE
+    Name: Sieglouse
+    Level: 253
+    Hp: 9831055
+    BaseExp: 742800
+    JobExp: 518662
+    Attack: 11186
+    Attack2: 5357
+    Defense: 289
+    MagicDefense: 159
+    Str: 219
+    Agi: 257
+    Vit: 143
+    Int: 184
+    Dex: 235
+    Luk: 225
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Insect
+    Element: Earth
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 238
+    AttackMotion: 576
+    ClientAttackMotion: 384
+    DamageMotion: 360
+    Ai: 04
 #  - Id: 20180
 #    AegisName: TACNU_BRZ
 #  - Id: 20181

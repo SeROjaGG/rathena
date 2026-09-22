@@ -1,0 +1,28 @@
+//===== rAthena Script =======================================
+//= Clock Tower: Unknown Basement Entrance
+//===== Description: =========================================
+//= "Giant Spring" NPC in Clock Tower 1F warps Base Level 240+
+//= players into the Unknown Basement (clock_01).
+//============================================================
+
+c_tower1,244,198,3	script	Giant Spring	844,{
+	mes "[Giant Spring]";
+	mes "This coiled spring looks like it could launch someone quite a distance.";
+	next;
+	if (BaseLevel < 240) {
+		mes "[Giant Spring]";
+		mes "It doesn't look sturdy enough to hold anyone under Base Level 240.";
+		close;
+	}
+	switch (select("Turn Right!:Leave")) {
+		case 1:
+			close2;
+			// 0,0 is the documented "pick any walkable cell" sentinel in
+			// pc_setpos (src/map/pc.cpp) -- used because the official entry
+			// coordinates on clock_01 aren't confirmed.
+			warp "clock_01", 0, 0;
+			end;
+		case 2:
+			close;
+	}
+}
